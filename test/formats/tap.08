@@ -1,0 +1,15 @@
+ok 1 - Comment marked as spam have correct flags
+ok 2 - Comment marked as ham have correct flags
+ok 3 - Comment marked as moderated have correct flags
+ok 4 - correct coment is created
+ok 5 - correct author
+ok 6 - correct email
+ok 7 - correct author
+ok 8 - correct post id
+ok 9 - correct comment data
+ok 10 - correct coment with url is created
+ok 11 - dies on bad author name
+ok 12 - dies on bad email
+ok 13 - dies on invalid url
+1..13
+ok       36 ms

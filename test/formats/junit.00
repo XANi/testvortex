@@ -1,0 +1,186 @@
+<testsuites>
+  <testsuite failures="0"
+             name="00-basic_t"
+             tests="3"
+             errors="0"
+             time="0.250530004501343">
+    <testcase name="1 - GET /" time="0.245672941207886"></testcase>
+    <testcase time="0.000251054763793945" name="2 - 200 OK"></testcase>
+    <testcase time="0.000176906585693359"
+              name="3 - content is similar"></testcase>
+    <testcase name="(teardown)" time="0.00432109832763672" />
+    <system-out><![CDATA[ok 1 - GET /
+ok 2 - 200 OK
+ok 3 - content is similar
+1..3
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite failures="0"
+             name="01-comments_t"
+             tests="14"
+             errors="0"
+             time="0.266022920608521">
+    <testcase name="1 - POST /blog/comments/new" time="0.246814966201782"></testcase>
+    <testcase name="2 - 200 OK" time="0.000224828720092773"></testcase>
+    <testcase name="3 - post returns ok" time="8.60691070556641e-05"></testcase>
+    <testcase name="4 - POST /blog/comments/new" time="0.00183606147766113"></testcase>
+    <testcase name="5 - invalid comment not accepted" time="0.000108003616333008"></testcase>
+    <testcase time="0.00218296051025391"
+              name="6 - POST /blog/comments/new"></testcase>
+    <testcase name="7 - comment with missing field not accepted" time="0.0001220703125"></testcase>
+    <testcase time="0.00393390655517578"
+              name="8 - POST /blog/comments/new"></testcase>
+    <testcase name="9 - comment to nonexisting blogpost not accepted" time="0.000260114669799805"></testcase>
+    <testcase time="0.00336098670959473"
+              name="10 - POST /blog/comments/new"></testcase>
+    <testcase name="11 - 200 OK" time="0.000181913375854492"></testcase>
+    <testcase name="12 - adding comment with url" time="0.000154018402099609"></testcase>
+    <testcase time="0.00187206268310547"
+              name="13 - POST /blog/comments/new"></testcase>
+    <testcase time="0.000160932540893555"
+              name="14 - adding comment with bad url"></testcase>
+    <testcase time="0.0045621395111084" name="(teardown)" />
+    <system-out><![CDATA[ok 1 - POST /blog/comments/new
+ok 2 - 200 OK
+ok 3 - post returns ok
+ok 4 - POST /blog/comments/new
+ok 5 - invalid comment not accepted
+ok 6 - POST /blog/comments/new
+ok 7 - comment with missing field not accepted
+ok 8 - POST /blog/comments/new
+ok 9 - comment to nonexisting blogpost not accepted
+ok 10 - POST /blog/comments/new
+ok 11 - 200 OK
+ok 12 - adding comment with url
+ok 13 - POST /blog/comments/new
+ok 14 - adding comment with bad url
+1..14
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite name="02-tss_t"
+             errors="0"
+             time="0.310885190963745"
+             tests="6"
+             failures="0">
+    <testcase name="1 - GET /blog/feed" time="0.303430080413818"></testcase>
+    <testcase name="2 - 200 OK" time="0.000314950942993164"></testcase>
+    <testcase time="0.00014495849609375"
+              name="3 - content is similar"></testcase>
+    <testcase time="0.000152111053466797"
+              name="4 - content is similar"></testcase>
+    <testcase name="5 - content is similar" time="0.000154018402099609"></testcase>
+    <testcase name="6 - content is similar" time="0.000144004821777344"></testcase>
+    <testcase time="0.00638818740844727" name="(teardown)" />
+    <system-out><![CDATA[ok 1 - GET /blog/feed
+ok 2 - 200 OK
+ok 3 - content is similar
+ok 4 - content is similar
+ok 5 - content is similar
+ok 6 - content is similar
+1..6
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite tests="3"
+             time="0.0374939441680908"
+             errors="0"
+             name="03-spam-core_t"
+             failures="0">
+    <testcase time="0.0358309745788574"
+              name="1 - Ham plugins return ham"></testcase>
+    <testcase time="0.000390052795410156"
+              name="2 - Ham and spam averaged to moderate"></testcase>
+    <testcase name="3 - Spam with higher weight averaged to spam" time="0.000144004821777344"></testcase>
+    <testcase name="(teardown)" time="0.00100302696228027" />
+    <system-out><![CDATA[ok 1 - Ham plugins return ham
+ok 2 - Ham and spam averaged to moderate
+ok 3 - Spam with higher weight averaged to spam
+1..3
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite tests="2"
+             time="0.0434057712554932"
+             errors="0"
+             name="04-spam-bogofilter_t"
+             failures="0">
+    <testcase time="0.0338809490203857" name="(init)" />
+    <testcase time="0.00679183006286621"
+              name="1 - Hammed messages return ham"></testcase>
+    <testcase time="0.00198221206665039"
+              name="2 - Spammed messages return spam"></testcase>
+    <testcase time="0.000623941421508789" name="(teardown)" />
+    <system-out><![CDATA[# 14 words, 1 message
+# 26 words, 1 message
+H 0
+ok 1 - Hammed messages return ham
+S 1
+ok 2 - Spammed messages return spam
+1..2
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite name="05-tags_t"
+             errors="0"
+             time="0.253199100494385"
+             tests="4"
+             failures="0">
+    <testcase time="0.246165037155151"
+              name="1 - GET /blog/tag/mojolicious"></testcase>
+    <testcase name="2 - posts for tag returns 200" time="0.000319004058837891"></testcase>
+    <testcase name="3 - summary" time="0.000834941864013672"></testcase>
+    <testcase time="0.000986099243164062" name="4 - author"></testcase>
+    <testcase name="(teardown)" time="0.00469017028808594" />
+    <system-out><![CDATA[ok 1 - GET /blog/tag/mojolicious
+ok 2 - posts for tag returns 200
+ok 3 - summary
+ok 4 - author
+1..4
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+  <testsuite tests="13"
+             time="0.0382671356201172"
+             errors="0"
+             name="06-comment_t"
+             failures="0">
+    <testcase time="0.0366270542144775"
+              name="1 - Comment marked as spam have correct flags"></testcase>
+    <testcase time="0.000234127044677734"
+              name="2 - Comment marked as ham have correct flags"></testcase>
+    <testcase name="3 - Comment marked as moderated have correct flags" time="8.79764556884766e-05"></testcase>
+    <testcase time="7.70092010498047e-05"
+              name="4 - correct coment is created"></testcase>
+    <testcase name="5 - correct author" time="7.58171081542969e-05"></testcase>
+    <testcase time="7.31945037841797e-05" name="6 - correct email"></testcase>
+    <testcase name="7 - correct author" time="8.392333984375e-05"></testcase>
+    <testcase time="8.70227813720703e-05" name="8 - correct post id"></testcase>
+    <testcase name="9 - correct comment data" time="7.39097595214844e-05"></testcase>
+    <testcase time="7.60555267333984e-05"
+              name="10 - correct coment with url is created"></testcase>
+    <testcase name="11 - dies on bad author name" time="7.29560852050781e-05"></testcase>
+    <testcase time="7.10487365722656e-05"
+              name="12 - dies on bad email"></testcase>
+    <testcase time="8.10623168945312e-05"
+              name="13 - dies on invalid url"></testcase>
+    <testcase time="0.000451087951660156" name="(teardown)" />
+    <system-out><![CDATA[ok 1 - Comment marked as spam have correct flags
+ok 2 - Comment marked as ham have correct flags
+ok 3 - Comment marked as moderated have correct flags
+ok 4 - correct coment is created
+ok 5 - correct author
+ok 6 - correct email
+ok 7 - correct author
+ok 8 - correct post id
+ok 9 - correct comment data
+ok 10 - correct coment with url is created
+ok 11 - dies on bad author name
+ok 12 - dies on bad email
+ok 13 - dies on invalid url
+1..13
+]]></system-out>
+    <system-err></system-err>
+  </testsuite>
+</testsuites>
