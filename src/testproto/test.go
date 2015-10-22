@@ -17,6 +17,10 @@ type Test struct {
 	Got string `json:"got"`
 	// Duration, if given test suite can output it
 	Duration time.Duration `json:"duration,omitempty"`
+	// Test file or identifier
+	TestFile string `json:"test_file,omitempty"`
+	// Test line, if supported
+	TestLine int `json:"test_line,omitempty"`
 	// Skipped means "skipped because of reasons" like missing systems stuff or DB to run test
 	// Should be not counted into failure count
 	Skip bool `json:"skip,omitempty"`
