@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func (t Test) RenderTest(id int) error {
+func (t Test) RenderTest(id int) string {
 	out := ""
 	if t.Success {
 		out += "ok "
