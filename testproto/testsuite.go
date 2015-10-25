@@ -1,8 +1,8 @@
 package testproto
 
 import (
-	"time"
 	"io"
+	"time"
 )
 
 // test suite
@@ -18,18 +18,17 @@ type TestSuite struct {
 	Tests []Test `json:"test"`
 	// Does whole test suite suceeded
 	Success bool `json:"success"`
-	Skip bool `json:"skip,omitempty"`
+	Skip    bool `json:"skip,omitempty"`
 	// Reason for skipping, if any
 	SkipReason string `json:"skip,omitempty"`
 	// Todo means test that are expected to fail (tested code not ready
 	// Crashed means "no result, test suite exited" should be considered a failure
-	Todo bool `json:"todo,omitempty"`
+	Todo       bool   `json:"todo,omitempty"`
 	TodoReason string `json:"todo_reason,omitempty"`
-	Crash bool `json:"crash,omitempty"`
+	Crash      bool   `json:"crash,omitempty"`
 	// Extra data from test if applicable
-	Details interface {} `json:"details,omitempty"`
+	Details interface{} `json:"details,omitempty"`
 }
-
 
 type TestSuiteProto interface {
 	Load(io.Reader) (err error)

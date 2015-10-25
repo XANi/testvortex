@@ -6,7 +6,7 @@ import (
 )
 
 func TestTapOutput(t *testing.T) {
-	var t Test;
+	var t testproto.Test;
 	Convey("TestFail",t,func() {
 		So (t.RenderTest(1), ShouldEqual, "ok 1")
 	})

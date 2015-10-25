@@ -7,7 +7,7 @@ import (
 // Single test structure, heavily based off https://testanything.org/tap-version-13-specification.html with some JUnit additions
 
 type Test struct {
-	Success bool `json:"success"`
+	Success     bool   `json:"success"`
 	Description string `json:"description"`
 	// test output, that should contain any message from failing test
 	Output string `json:"out"`
@@ -28,9 +28,9 @@ type Test struct {
 	SkipReason string `json:"skip,omitempty"`
 	// Todo means test that are expected to fail (tested code not ready
 	// Crashed means "no result, test suite exited" should be considered a failure
-	Todo bool `json:"todo,omitempty"`
+	Todo       bool   `json:"todo,omitempty"`
 	TodoReason string `json:"todo_reason,omitempty"`
-	Crash bool `json:"crash,omitempty"`
+	Crash      bool   `json:"crash,omitempty"`
 	// Extra data from test if applicable
-	Details interface {} `json:"details,omitempty"`
+	Details interface{} `json:"details,omitempty"`
 }
