@@ -1,0 +1,6 @@
+{
+  "name": "Testvortex",
+  "tagline": "TDD test format converter",
+  "body": "Testvortex\r\n\r\nTest format converter\r\n\r\nPut any supported test format and get output that is supported by your CI system, or just a pretty ANSIcolor console\r\n\r\n\r\n## Features\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
